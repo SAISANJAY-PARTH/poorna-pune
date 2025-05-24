@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration - Poorna Pune</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="main.html" class="logo">Poorna Pune</a>
+                <div class="auth-buttons">
+                    <a href="#" class="login-btn">Login | Signup</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="registration-container">
+            <div id="registration-form" class="registration-form">
+                <div class="form-header">
+                    <h1>Event Registration</h1>
+                    <p id="event-title">Loading event details...</p>
+                    <p id="event-price" class="event-price"></p>
+                </div>
+
+                <form id="event-registration-form" onsubmit="handleRegistration(event)">
+                    <div class="form-section">
+                        <h2>Personal Information</h2>
+                        <div class="form-group">
+                            <label class="form-label" for="fullName">Full Name*</label>
+                            <input type="text" id="fullName" name="fullName" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email*</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="phone">Phone Number*</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="age">Age*</label>
+                            <input type="number" id="age" name="age" class="form-input" min="1" max="120" required>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h2>Ticket Information</h2>
+                        <div class="form-group">
+                            <label class="form-label" for="ticketQuantity">Number of Tickets*</label>
+                            <input type="number" id="ticketQuantity" name="ticketQuantity" class="form-input" min="1" max="10" value="1" required onchange="updateTotalPrice()">
+                        </div>
+                        <div class="price-summary">
+                            <div class="price-item">
+                                <span>Price per ticket:</span>
+                                <span id="pricePerTicket">₹0</span>
+                            </div>
+                            <div class="price-item total">
+                                <span>Total Amount:</span>
+                                <span id="totalPrice">₹0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-footer">
+                        <button type="button" class="btn btn-secondary" onclick="history.back()">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Complete Registration</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let eventPrice = 0;
+
+        // Load event details
+        async function loadEventDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const eventId = urlParams.get('event');
+
+            try {
+                const response = await fetch('services.json');
+                if (!response.ok) throw new Error('Failed to fetch event details');
+                const data = await response.json();
+                
+                const event = data.events.find(e => e.id === eventId);
+                if (event) {
+                    document.getElementById('event-title').textContent = event.title;
+                    document.title = `Register for ${event.title} - Poorna Pune`;
+                    
+                    const priceText = event.price;
+                    document.getElementById('event-price').textContent = `Price: ${priceText}`;
+                    
+                    if (priceText === 'Free') {
+                        eventPrice = 0;
+                        document.getElementById('pricePerTicket').textContent = 'Free';
+                    } else {
+                        eventPrice = parseInt(priceText.replace('₹', ''));
+                        document.getElementById('pricePerTicket').textContent = priceText;
+                    }
+
+                    updateTotalPrice();
+                } else {
+                    throw new Error('Event not found');
+                }
+            } catch (error) {
+                console.error('Error loading event details:', error);
+                document.getElementById('event-title').textContent = 'Event Not Found';
+            }
+        }
+
+        // Update total price based on ticket quantity
+        function updateTotalPrice() {
+            const quantity = parseInt(document.getElementById('ticketQuantity').value);
+            const total = eventPrice * quantity;
+
+            if (eventPrice === 0) {
+                document.getElementById('totalPrice').textContent = 'Free';
+            } else {
+                document.getElementById('totalPrice').textContent = `₹${total}`;
+            }
+        }
+
+        // Handle form submission
+        async function handleRegistration(event) {
+            event.preventDefault();
+
+            const formData = new FormData(event.target);
+            const registrationData = Object.fromEntries(formData.entries());
+
+            const urlParams = new URLSearchParams(window.location.search);
+            registrationData.eventId = urlParams.get('event');
+            registrationData.totalPrice = document.getElementById('totalPrice').textContent;
+
+            try {
+                const response = await fetch('http://localhost/Service-Learning/register.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(registrationData)
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert(data.message || 'Registration successful!');
+                    window.location.href = 'main.html';
+                } else {
+                    alert(data.error || 'Registration failed. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            }
+        }
+
+        // Load event details when page loads
+        document.addEventListener('DOMContentLoaded', loadEventDetails);
+    </script>
+</body>
+</html>

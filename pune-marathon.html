@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pune Green Marathon - Event Details</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="main.html" class="logo">
+                    Poorna Pune
+                </a>
+                <div class="search-container">
+                    <input type="text" placeholder="Search for events, interests or activities">
+                </div>
+                <div class="auth-buttons">
+                    <button class="create-event-btn">CREATE EVENT</button>
+                    <a href="#" class="login-btn">Login | Signup</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="event-detail">
+            <div class="event-banner">
+                <img src="https://placehold.co/1200x400/6b46c1/white?text=Pune+Green+Marathon" alt="Pune Green Marathon">
+            </div>
+            
+            <div class="event-info">
+                <h1 class="event-detail-title">Pune Green Marathon</h1>
+                
+                <div class="event-detail-meta">
+                    <div class="meta-item">
+                        <span>April 14, 2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <span>5:30 AM - 10:30 AM</span>
+                    </div>
+                    <div class="meta-item">
+                        <span>Pune University Road</span>
+                    </div>
+                </div>
+                
+                <div class="event-description">
+                    <p>Join the Pune Green Marathon, a run for a cleaner and greener city! This eco-friendly marathon aims to raise 
+                    awareness about environmental conservation while promoting fitness. Participants will receive eco-friendly 
+                    kits, including T-shirts, medals, and refreshments.</p>
+                </div>
+                
+                <div class="ticket-info">
+                    <div class="ticket-price">₹750</div>
+                    <button class="register-btn" onclick="registerForEvent()">Register Now</button>
+                </div>
+                
+                <div class="contact-info">
+                    <div>
+                        <strong>Email:</strong> <a href="mailto:info@puneevents.com">info@puneevents.com</a>
+                    </div>
+                    <div>
+                        <strong>Phone:</strong> <a href="tel:+919876543210">+91 98765 43210</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        function registerForEvent() {
+            window.location.href = 'main.html?event=pune-marathon';
+        }
+    </script>
+</body>
+</html>

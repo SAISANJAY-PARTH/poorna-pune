@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Tourism Workshop - Event Details</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="main.html" class="logo">
+                    Poorna Pune
+                </a>
+                <div class="search-container">
+                    <input type="text" placeholder="Search for events, interests or activities">
+                </div>
+                <div class="auth-buttons">
+                    <button class="create-event-btn">CREATE EVENT</button>
+                    <a href="#" class="login-btn">Login | Signup</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="event-detail">
+            <div class="event-banner">
+                <img src="images\eco friendly cyclothon.jpg" alt="Eco Tourism Workshop">
+            </div>
+            
+            <div class="event-info">
+                <h1 class="event-detail-title">Eco-Tourism Workshop</h1>
+                
+                <div class="event-detail-meta">
+                    <div class="meta-item">
+                        <span>April 15, 2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <span>10:00 AM - 3:00 PM</span>
+                    </div>
+                    <div class="meta-item">
+                        <span>Pune Nature Park</span>
+                    </div>
+                </div>
+                
+                <div class="event-description">
+                    <p>Join us for an <strong>Eco-Tourism Workshop</strong> to explore sustainable travel practices and how tourism can support conservation efforts. 
+                    Learn from experts and get hands-on experience with eco-friendly tourism initiatives.</p>
+                </div>
+                
+                <div class="ticket-info">
+                    <div class="ticket-price">₹600</div>
+                    <button class="register-btn" onclick="registerForEvent()">Register Now</button>
+                </div>
+                
+                <div class="contact-info">
+                    <div>
+                        <strong>Email:</strong> <a href="mailto:events@puneeco.com">events@puneeco.com</a>
+                    </div>
+                    <div>
+                        <strong>Phone:</strong> <a href="tel:+919876543211">+91 98765 43211</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        function registerForEvent() {
+            window.location.href = 'main.html?event=eco-tourism';
+        }
+    </script>
+</body>
+</html>

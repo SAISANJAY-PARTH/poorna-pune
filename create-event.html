@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Event - Poorna Pune</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="/" class="logo">
+                    Poorna Pune
+                </a>
+                <div class="auth-buttons">
+                    <a href="#" class="login-btn">Login | Signup</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="create-event-container">
+            <div class="form-header">
+                <h1>Create New Event</h1>
+                <p>Fill in the details below to create your event</p>
+            </div>
+
+            <form id="createEventForm" onsubmit="handleSubmit(event)">
+                <!-- Basic Information -->
+                <div class="form-section">
+                    <h2>Basic Information</h2>
+                    <div class="form-group">
+                        <label class="form-label" for="eventTitle">Event Title*</label>
+                        <input type="text" id="eventTitle" name="title" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="eventCategory">Category*</label>
+                        <select id="eventCategory" name="category" class="form-input" required>
+                            <option value="">Select a category</option>
+                            <option value="Marathons & Cyclothons">Marathons & Cyclothons</option>
+                            <option value="Clean-up Drives">Clean-up Drives</option>
+                            <option value="Environmental Workshops">Environmental Workshops</option>
+                            <option value="Tree Plantation">Tree Plantation</option>
+                            <option value="River Conservation">River Conservation</option>
+                            <option value="Wildlife Protection">Wildlife Protection</option>
+                            <option value="Sustainable Living">Sustainable Living</option>
+                            <option value="Youth Empowerment">Youth Empowerment</option>
+                            <option value="Cultural Events">Cultural Events</option>
+                            <option value="Educational Programs">Educational Programs</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="eventDescription">Description*</label>
+                        <textarea id="eventDescription" name="description" class="form-input form-textarea" required></textarea>
+                    </div>
+                </div>
+
+                <!-- Date and Time -->
+                <div class="form-section">
+                    <h2>Date and Time</h2>
+                    <div class="form-group">
+                        <label class="form-label" for="eventDate">Event Date*</label>
+                        <input type="date" id="eventDate" name="date" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="eventTime">Start Time*</label>
+                        <input type="time" id="eventTime" name="time" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="eventDuration">Duration (hours)*</label>
+                        <input type="number" id="eventDuration" name="duration" class="form-input" min="0.5" step="0.5" required>
+                    </div>
+                </div>
+
+                <!-- Location -->
+                <div class="form-section">
+                    <h2>Location</h2>
+                    <div class="form-group">
+                        <label class="form-label" for="eventVenue">Venue Name*</label>
+                        <input type="text" id="eventVenue" name="venue" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="eventAddress">Full Address*</label>
+                        <textarea id="eventAddress" name="address" class="form-input form-textarea" required></textarea>
+                    </div>
+                </div>
+
+                <!-- Event Image -->
+                <div class="form-section">
+                    <h2>Event Image</h2>
+                    <div class="form-group">
+                        <div class="image-upload" onclick="document.getElementById('eventImage').click()">
+                            <input type="file" id="eventImage" name="image" accept="image/*" style="display: none;">
+                            <i class="mdi mdi-cloud-upload"></i>
+                            <p>Click to upload event banner image</p>
+                            <p class="text-sm text-gray-500">Recommended size: 1200x600px</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ticket Information -->
+                <div class="form-section">
+                    <h2>Ticket Information</h2>
+                    <div class="form-group">
+                        <label class="form-label" for="eventPrice">Price (₹)*</label>
+                        <input type="number" id="eventPrice" name="price" class="form-input" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="eventCapacity">Maximum Capacity*</label>
+                        <input type="number" id="eventCapacity" name="capacity" class="form-input" min="1" required>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="form-section">
+                    <h2>Contact Information</h2>
+                    <div class="form-group">
+                        <label class="form-label" for="organizerName">Organizer Name*</label>
+                        <input type="text" id="organizerName" name="organizerName" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="organizerEmail">Email*</label>
+                        <input type="email" id="organizerEmail" name="organizerEmail" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="organizerPhone">Phone*</label>
+                        <input type="tel" id="organizerPhone" name="organizerPhone" class="form-input" required>
+                    </div>
+                </div>
+
+                <div class="form-footer">
+                    <button type="button" class="btn btn-secondary" onclick="history.back()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Create Event</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        // Preview uploaded image
+        document.getElementById('eventImage').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const imageUpload = document.querySelector('.image-upload');
+                    imageUpload.style.backgroundImage = `url(${e.target.result})`;
+                    imageUpload.style.backgroundSize = 'cover';
+                    imageUpload.style.backgroundPosition = 'center';
+                    imageUpload.innerHTML = ''; // Clear the upload instructions
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Handle form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(event.target);
+            const eventData = Object.fromEntries(formData.entries());
+            
+            // Add event to the events array (in a real app, this would be sent to a server)
+            console.log('Event Data:', eventData);
+            
+            // Show success message
+            alert('Event created successfully!');
+            
+            // Redirect to home page
+            window.location.href = '/';
+        }
+    </script>
+</body>
+</html> 

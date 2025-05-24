@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Street Play on Environment - Event Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .event-header {
+            width: 100%;
+            height: 300px;
+            background: url('street-play.jpg') no-repeat center center/cover;
+            border-bottom: 5px solid #28a745;
+        }
+        .event-details {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .event-details h2 {
+            color: #28a745;
+        }
+        .register-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .register-btn:hover {
+            background-color: #1e7e34;
+        }
+        .price-tag {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="event-header"></div>
+    
+    <div class="event-details">
+        <h2>Street Play on Environment</h2>
+        <p><strong>Date:</strong> May 5, 2025</p>
+        <p><strong>Time:</strong> 5:00 PM - 7:00 PM</p>
+        <p><strong>Venue:</strong> JM Road, Pune</p>
+        <p>
+            Join us for an engaging **Street Play on Environmental Awareness**!  
+            This performance will highlight key environmental issues like pollution, climate change, and deforestation  
+            while encouraging community participation in sustainable practices.  
+            Be a part of this impactful experience and spread awareness!
+        </p>
+        <div class="price-tag">Free Entry</div>
+        <button class="register-btn" onclick="registerForEvent()">Register Now</button>
+        <p><strong>Contact:</strong> greenact@event.com | +91 98765 43214</p>
+    </div>
+    
+    <script>
+        function registerForEvent() {
+            window.location.href = 'main.html?event=street-play';
+        }
+    </script>
+</body>
+</html>

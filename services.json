@@ -1,0 +1,961 @@
+{
+  "categories": [
+    "Marathons & Cyclothons",
+    "Clean-up Drives",
+    "Environmental Workshops",
+    "Tree Plantation",
+    "River Conservation",
+    "Wildlife Protection",
+    "Sustainable Living",
+    "Youth Empowerment",
+    "Cultural Events",
+    "Educational Programs"
+  ],
+  "events": [
+  {
+    "id": "pune-marathon",
+    "title": "Pune Green Marathon",
+    "category": "Marathons & Cyclothons",
+      "date": "2025-04-14",
+      "time": "05:30 AM - 10:30 AM",
+    "venue": "Pune University Road",
+      "image": "images/marathon.jpg",
+      "description": "Join us for the annual Pune Green Marathon to promote environmental awareness while staying fit.",
+      "price": "₹499",
+    "contact": {
+        "email": "info@punegreenmarathon.com",
+      "phone": "+91 98765 43210"
+    }
+  },
+  {
+      "id": "river-cleanup",
+      "title": "Mula-Mutha River Cleanup",
+      "category": "Clean-up Drives",
+      "date": "2025-04-20",
+      "time": "06:30 AM - 10:30 AM",
+      "venue": "Mula-Mutha Riverbanks",
+      "image": "images/mula mutha river cleanup.jpg",
+      "description": "Help us clean the Mula-Mutha river and restore its natural beauty.",
+      "price": "Free",
+      "contact": {
+        "email": "cleanup@mulamuthariver.org",
+        "phone": "+91 98765 43211"
+      }
+    },
+    {
+      "id": "eco-workshop",
+      "title": "Zero Waste Living Workshop",
+      "category": "Environmental Workshops",
+      "date": "2025-05-01",
+      "time": "10:00 AM - 01:00 PM",
+      "venue": "Green Earth Center, Koregaon Park",
+      "image": "images/zero waste living workshop.jpg",
+      "description": "Learn practical tips and techniques for adopting a zero-waste lifestyle.",
+      "price": "₹299",
+      "contact": {
+        "email": "workshop@zerowaste.org",
+        "phone": "+91 98765 43212"
+      }
+    },
+    {
+      "id": "tree-plantation",
+      "title": "Mass Tree Plantation Drive",
+      "category": "Tree Plantation",
+      "date": "2025-05-15",
+      "time": "07:00 AM - 11:00 AM",
+      "venue": "Vetal Tekdi",
+      "image": "images/mass tree plantation drive.jpg",
+      "description": "Join our mission to plant 1000 native trees in Pune's hills.",
+      "price": "Free",
+      "contact": {
+        "email": "plant@greenerpune.org",
+        "phone": "+91 98765 43213"
+      }
+    },
+    {
+      "id": "wildlife-photography",
+      "title": "Wildlife Photography Workshop",
+      "category": "Wildlife Protection",
+      "date": "2025-05-20",
+      "time": "09:00 AM - 04:00 PM",
+      "venue": "Sinhagad Valley",
+      "image": "images/wild-life-workshop.jpg",
+      "description": "Learn wildlife photography while understanding local biodiversity.",
+      "price": "₹999",
+      "contact": {
+        "email": "photo@wildlifepune.org",
+        "phone": "+91 98765 43214"
+      }
+    },
+    {
+      "id": "youth-leadership",
+      "title": "Youth Environmental Leadership Summit",
+      "category": "Youth Empowerment",
+      "date": "2025-06-01",
+      "time": "10:00 AM - 05:00 PM",
+      "venue": "YASHADA, Baner",
+      "image": "images/Youth Environmental Leadership Summit.jpeg",
+      "description": "Empowering young leaders to take environmental action in their communities.",
+      "price": "₹199",
+      "contact": {
+        "email": "summit@youthenv.org",
+        "phone": "+91 98765 43215"
+      }
+    },
+    {
+      "id": "cultural-eco-fest",
+      "title": "Eco-Cultural Festival",
+      "category": "Cultural Events",
+      "date": "2025-06-15",
+      "time": "04:00 PM - 09:00 PM",
+      "venue": "JM Road",
+      "image": "images/Eco-Cultural Festival.jpg",
+      "description": "Celebrate environmental awareness through art, music, and dance.",
+      "price": "Free",
+      "contact": {
+        "email": "fest@ecoculture.org",
+        "phone": "+91 98765 43216"
+      }
+    },
+    {
+      "id": "science-exhibition",
+      "title": "Environmental Science Exhibition",
+      "category": "Educational Programs",
+      "date": "2025-06-30",
+      "time": "10:00 AM - 06:00 PM",
+      "venue": "Science Park, Chinchwad",
+      "image": "images/Environmental Science Exhibition.jpg",
+      "description": "Interactive exhibition showcasing environmental science projects.",
+      "price": "₹99",
+      "contact": {
+        "email": "expo@scienceenv.org",
+        "phone": "+91 98765 43217"
+      }
+    },
+    {
+      "id": "sustainable-fashion",
+      "title": "Sustainable Fashion Show",
+      "category": "Sustainable Living",
+      "date": "2025-07-10",
+      "time": "06:00 PM - 09:00 PM",
+      "venue": "Phoenix Mall",
+      "image": "images/sustainable fashion show.jpg",
+      "description": "Showcasing eco-friendly fashion and sustainable clothing brands.",
+      "price": "₹399",
+      "contact": {
+        "email": "fashion@sustainable.org",
+        "phone": "+91 98765 43218"
+      }
+    },
+    {
+      "id": "cycle-tour",
+      "title": "Heritage Cycle Tour",
+      "category": "Marathons & Cyclothons",
+      "date": "2025-07-20",
+      "time": "06:00 AM - 10:00 AM",
+      "venue": "Shaniwar Wada",
+      "image": "images/pune heitage cycle tour.jpg",
+      "description": "Explore Pune's heritage on a guided bicycle tour while promoting sustainable transport.",
+      "price": "₹299",
+      "contact": {
+        "email": "tour@puneheritage.org",
+        "phone": "+91 98765 43219"
+      }
+    },
+    {
+      "id": "waste-art",
+      "title": "Waste to Art Workshop",
+      "category": "Environmental Workshops",
+      "date": "2025-08-01",
+      "time": "11:00 AM - 02:00 PM",
+      "venue": "NFAI, Law College Road",
+      "image": "images/waste to art.jpg",
+      "description": "Create beautiful art pieces from recycled materials and waste.",
+      "price": "₹199",
+      "contact": {
+        "email": "art@wastecraft.org",
+        "phone": "+91 98765 43220"
+      }
+    },
+    {
+      "id": "bird-watching",
+      "title": "Bird Watching Experience",
+      "category": "Wildlife Protection",
+      "date": "2025-08-15",
+      "time": "06:30 AM - 09:30 AM",
+      "venue": "Pashan Lake",
+      "image": "images/bird watching experience.jpeg",
+      "description": "Learn about local bird species and their conservation.",
+      "price": "₹149",
+      "contact": {
+        "email": "birds@wildlifepune.org",
+        "phone": "+91 98765 43221"
+      }
+    },
+    {
+      "id": "night-marathon",
+      "title": "Pune Night Marathon",
+      "category": "Marathons & Cyclothons",
+      "date": "2025-05-01",
+      "time": "08:00 PM - 11:00 PM",
+      "venue": "Amanora Park Town",
+      "image": "images/pune night marathon.jpg",
+      "description": "Experience the thrill of running through Pune's illuminated streets.",
+      "price": "₹599",
+      "contact": {
+        "email": "night@punemarathon.com",
+        "phone": "+91 98765 43222"
+      }
+    },
+    {
+      "id": "kids-cyclothon",
+      "title": "Kids Cyclothon",
+      "category": "Marathons & Cyclothons",
+      "date": "2025-05-15",
+      "time": "07:00 AM - 09:00 AM",
+      "venue": "Magarpatta City",
+      "image": "images/kids cyclothon.jpg",
+      "description": "A fun cycling event for children to promote healthy habits.",
+      "price": "₹299",
+      "contact": {
+        "email": "kids@cyclothon.com",
+        "phone": "+91 98765 43223"
+      }
+    },
+    {
+      "id": "senior-walkathon",
+      "title": "Senior Citizens Walkathon",
+      "category": "Marathons & Cyclothons",
+      "date": "2025-06-01",
+      "time": "06:30 AM - 08:30 AM",
+      "venue": "Deccan Gymkhana",
+      "image": "images/senior citizen wakathon.jpg",
+      "description": "A special walkathon designed for senior citizens.",
+      "price": "Free",
+      "contact": {
+        "email": "seniors@walkathon.com",
+        "phone": "+91 98765 43224"
+      }
+    },
+    {
+      "id": "eco-cyclothon",
+      "title": "Eco-Friendly Cyclothon",
+      "category": "Marathons & Cyclothons",
+      "date": "2025-06-15",
+      "time": "06:00 AM - 10:00 AM",
+      "venue": "Symbiosis Hill",
+      "image": "images/eco friendly cyclothon.jpg",
+      "description": "Cycle through nature trails while learning about local ecology.",
+      "price": "₹399",
+      "contact": {
+        "email": "eco@cyclothon.com",
+        "phone": "+91 98765 43225"
+      }
+    },
+    {
+      "id": "corporate-run",
+      "title": "Corporate Challenge Run",
+      "category": "Marathons & Cyclothons",
+      "date": "2025-07-01",
+      "time": "06:00 AM - 09:00 AM",
+      "venue": "Hinjewadi IT Park",
+      "image": "images/cooparate challange run.jpg",
+      "description": "Inter-corporate running competition for team building.",
+      "price": "₹699",
+      "contact": {
+        "email": "corporate@run.com",
+        "phone": "+91 98765 43226"
+      }
+    },
+    {
+      "id": "family-cyclothon",
+      "title": "Family Fun Cyclothon",
+      "category": "Marathons & Cyclothons",
+      "date": "2025-07-15",
+      "time": "07:00 AM - 10:00 AM",
+      "venue": "Kharadi",
+      "image": "images/family fun cyclothon.jpg",
+      "description": "A cycling event for the whole family with fun activities.",
+      "price": "₹499",
+      "contact": {
+        "email": "family@cyclothon.com",
+        "phone": "+91 98765 43227"
+      }
+    },
+    {
+      "id": "trail-run",
+      "title": "Pune Trail Run",
+    "category": "Marathons & Cyclothons",
+      "date": "2025-08-01",
+      "time": "06:30 AM - 10:30 AM",
+      "venue": "Sinhagad Valley",
+      "image": "images/pune trail run.jpg",
+      "description": "Challenge yourself with a run through scenic trails.",
+      "price": "₹799",
+    "contact": {
+        "email": "trail@run.com",
+        "phone": "+91 98765 43228"
+    }
+  },
+  {
+      "id": "midnight-cyclothon",
+      "title": "Midnight Cyclothon",
+    "category": "Marathons & Cyclothons",
+      "date": "2025-08-15",
+      "time": "11:00 PM - 02:00 AM",
+      "venue": "JM Road",
+      "image": "images/midnight cyclothon.jpg",
+      "description": "Experience the city's empty streets on a midnight ride.",
+      "price": "₹599",
+      "contact": {
+        "email": "midnight@cyclothon.com",
+        "phone": "+91 98765 43229"
+      }
+    },
+    {
+      "id": "beach-cleanup",
+      "title": "Beach Clean-up Drive",
+      "category": "Clean-up Drives",
+      "date": "2025-05-01",
+      "time": "07:00 AM - 10:00 AM",
+      "venue": "Ratnagiri Beach",
+      "image": "images/beach cleanup drive.jpg",
+      "description": "Join us in cleaning up the beautiful beaches of Ratnagiri.",
+      "price": "Free",
+      "contact": {
+        "email": "beach@cleanup.com",
+        "phone": "+91 98765 43230"
+      }
+    },
+    {
+      "id": "park-cleanup",
+      "title": "City Park Clean-up",
+      "category": "Clean-up Drives",
+      "date": "2025-05-15",
+      "time": "07:30 AM - 10:30 AM",
+      "venue": "Saras Baug",
+      "image": "images/citypark cleanup.jpg",
+      "description": "Help maintain our beautiful city parks clean and green.",
+      "price": "Free",
+      "contact": {
+        "email": "park@cleanup.com",
+        "phone": "+91 98765 43231"
+      }
+    },
+    {
+      "id": "lake-cleanup",
+      "title": "Lake Clean-up Initiative",
+      "category": "Clean-up Drives",
+      "date": "2025-06-01",
+      "time": "07:00 AM - 11:00 AM",
+      "venue": "Pashan Lake",
+      "image": "images/lake cleanup.jpg",
+      "description": "Join us in cleaning and preserving our city's lakes.",
+      "price": "Free",
+      "contact": {
+        "email": "lake@cleanup.com",
+        "phone": "+91 98765 43232"
+      }
+    },
+    {
+      "id": "street-cleanup",
+      "title": "Street Clean-up Drive",
+      "category": "Clean-up Drives",
+      "date": "2025-06-15",
+      "time": "08:00 AM - 11:00 AM",
+      "venue": "FC Road",
+      "image": "images/street cleanup.jpg",
+      "description": "Make our streets cleaner and more beautiful.",
+      "price": "Free",
+      "contact": {
+        "email": "street@cleanup.com",
+        "phone": "+91 98765 43233"
+      }
+    },
+    {
+      "id": "market-cleanup",
+      "title": "Market Area Clean-up",
+      "category": "Clean-up Drives",
+      "date": "2025-07-01",
+      "time": "07:00 AM - 10:00 AM",
+      "venue": "Mandai Market",
+      "image": "images/market area cleanup.jpg",
+      "description": "Clean-up drive in one of Pune's busiest markets.",
+      "price": "Free",
+      "contact": {
+        "email": "market@cleanup.com",
+        "phone": "+91 98765 43234"
+      }
+    },
+    {
+      "id": "temple-cleanup",
+      "title": "Temple Clean-up Drive",
+      "category": "Clean-up Drives",
+      "date": "2025-07-15",
+      "time": "07:30 AM - 10:30 AM",
+      "venue": "Dagdusheth Temple",
+      "image": "images/temple cleanup.jpg",
+      "description": "Help maintain cleanliness around religious sites.",
+      "price": "Free",
+      "contact": {
+        "email": "temple@cleanup.com",
+        "phone": "+91 98765 43235"
+      }
+    },
+    {
+      "id": "school-cleanup",
+      "title": "School Campus Clean-up",
+      "category": "Clean-up Drives",
+      "date": "2025-08-01",
+      "time": "09:00 AM - 12:00 PM",
+      "venue": "Various Schools",
+      "image": "images/school campus cleanup.jpg",
+      "description": "Clean-up drive across multiple school campuses.",
+      "price": "Free",
+      "contact": {
+        "email": "school@cleanup.com",
+        "phone": "+91 98765 43236"
+      }
+    },
+    {
+      "id": "highway-cleanup",
+      "title": "Highway Clean-up Drive",
+      "category": "Clean-up Drives",
+      "date": "2025-08-15",
+      "time": "07:00 AM - 11:00 AM",
+      "venue": "Mumbai-Pune Highway",
+      "image": "images/highway cleanup.jpg",
+      "description": "Clean-up drive along the highway stretches.",
+      "price": "Free",
+      "contact": {
+        "email": "highway@cleanup.com",
+        "phone": "+91 98765 43237"
+      }
+    },
+    {
+      "id": "residential-cleanup",
+      "title": "Residential Area Clean-up",
+      "category": "Clean-up Drives",
+      "date": "2025-09-01",
+      "time": "08:00 AM - 11:00 AM",
+      "venue": "Various Societies",
+      "image": "images/resident cleanup.jpg",
+      "description": "Community clean-up drive in residential areas.",
+      "price": "Free",
+    "contact": {
+        "email": "residential@cleanup.com",
+        "phone": "+91 98765 43238"
+      }
+    },
+    {
+      "id": "industrial-cleanup",
+      "title": "Industrial Area Clean-up",
+      "category": "Clean-up Drives",
+      "date": "2025-09-15",
+      "time": "08:30 AM - 11:30 AM",
+      "venue": "MIDC Bhosari",
+      "image": "images/indstrial area cleanup.jpg",
+      "description": "Clean-up drive in industrial areas.",
+    "price": "Free",
+      "contact": {
+        "email": "industrial@cleanup.com",
+        "phone": "+91 98765 43239"
+      }
+    },
+    {
+      "id": "composting-workshop",
+      "title": "Home Composting Workshop",
+      "category": "Environmental Workshops",
+      "date": "2025-05-01",
+      "time": "10:00 AM - 01:00 PM",
+      "venue": "Empress Garden",
+      "image": "images/home composting.jpg",
+      "description": "Learn how to create and maintain a home composting system.",
+      "price": "₹299",
+      "contact": {
+        "email": "composting@workshop.com",
+        "phone": "+91 98765 43240"
+      }
+    },
+    {
+      "id": "recycling-workshop",
+      "title": "Creative Recycling Workshop",
+      "category": "Environmental Workshops",
+      "date": "2025-05-15",
+      "time": "02:00 PM - 05:00 PM",
+      "venue": "JW Marriott",
+      "image": "images/recycling workshop.jpg",
+      "description": "Learn creative ways to reuse and recycle household items.",
+      "price": "₹399",
+    "contact": {
+        "email": "recycling@workshop.com",
+        "phone": "+91 98765 43241"
+      }
+    },
+    {
+      "id": "tree-plantation-drive-2025",
+      "title": "Urban Forest Initiative",
+      "category": "Tree Plantation",
+      "date": "2025-06-15",
+      "time": "07:00 - 11:00",
+      "venue": "Pune University Campus",
+      "image": "images/urban forest.jpg",
+      "description": "Join us in creating an urban forest within the university campus. Learn about native species and their importance.",
+    "price": "Free",
+    "contact": {
+        "email": "urban.forest@gmail.com",
+      "phone": "+91 98765 43210"
+    }
+  },
+  {
+      "id": "community-garden-project",
+      "title": "Community Garden Project",
+      "category": "Tree Plantation",
+      "date": "2025-07-01",
+      "time": "08:00 - 12:00",
+      "venue": "Kothrud Community Center",
+      "image": "images/comunity gardan.jpg",
+      "description": "Create and maintain a community garden with fruit trees and vegetables.",
+      "price": "₹200",
+      "contact": {
+        "email": "community.garden@gmail.com",
+        "phone": "+91 98765 43211"
+      }
+    },
+    {
+      "id": "school-greening-program",
+      "title": "School Greening Program",
+      "category": "Tree Plantation",
+      "date": "2025-07-15",
+      "time": "09:00 - 13:00",
+      "venue": "Various Schools in Pune",
+      "image": "images/school greening program.jpg",
+      "description": "Plant trees in school compounds and educate students about environmental conservation.",
+    "price": "Free",
+      "contact": {
+        "email": "green.schools@gmail.com",
+        "phone": "+91 98765 43212"
+      }
+    },
+    {
+      "id": "miyawaki-forest-creation",
+      "title": "Miyawaki Forest Creation",
+      "category": "Tree Plantation",
+      "date": "2025-08-01",
+      "time": "07:30 - 12:30",
+      "venue": "Baner Hills",
+      "image": "images/miyawaki forest.jpg",
+      "description": "Create a dense urban forest using the Miyawaki method of afforestation.",
+      "price": "₹500",
+      "contact": {
+        "email": "miyawaki.pune@gmail.com",
+        "phone": "+91 98765 43213"
+      }
+    },
+    {
+      "id": "fruit-tree-plantation",
+      "title": "Fruit Tree Plantation Drive",
+      "category": "Tree Plantation",
+      "date": "2025-08-15",
+      "time": "08:00 - 12:00",
+      "venue": "Sinhagad Road Area",
+      "image": "images/fruit plantation drive.jpg",
+      "description": "Plant fruit trees to provide food security and increase green cover.",
+      "price": "₹300",
+      "contact": {
+        "email": "fruit.trees@gmail.com",
+        "phone": "+91 98765 43214"
+      }
+    },
+    {
+      "id": "snake-rescue-workshop",
+      "title": "Snake Rescue Workshop",
+      "category": "Wildlife Protection",
+      "date": "2025-06-20",
+      "time": "09:00 - 17:00",
+      "venue": "Katraj Snake Park",
+      "image": "images/snake rescue worshop.webp",
+      "description": "Learn about snake species, rescue techniques, and wildlife conservation.",
+      "price": "₹1000",
+      "contact": {
+        "email": "snake.rescue@gmail.com",
+        "phone": "+91 98765 43215"
+      }
+    },
+    {
+      "id": "bird-watching-expedition",
+      "title": "Bird Watching Expedition",
+      "category": "Wildlife Protection",
+      "date": "2025-07-05",
+      "time": "06:00 - 10:00",
+      "venue": "Pashan Lake",
+      "image": "images/bird watching expeditions.webp",
+      "description": "Observe and document local bird species with expert ornithologists.",
+      "price": "₹500",
+      "contact": {
+        "email": "bird.watch@gmail.com",
+        "phone": "+91 98765 43216"
+      }
+    },
+    {
+      "id": "wildlife-photography-workshop",
+      "title": "Wildlife Photography Workshop",
+      "category": "Wildlife Protection",
+      "date": "2025-07-20",
+      "time": "08:00 - 16:00",
+      "venue": "Bhimashankar Wildlife Sanctuary",
+      "image": "images/wildlife photography workshop.jpg",
+      "description": "Learn wildlife photography techniques while exploring local biodiversity.",
+      "price": "₹2000",
+      "contact": {
+        "email": "wild.photo@gmail.com",
+        "phone": "+91 98765 43217"
+      }
+    },
+    {
+      "id": "sustainable-home-workshop",
+      "title": "Sustainable Home Workshop",
+      "category": "Sustainable Living",
+      "date": "2025-06-25",
+      "time": "10:00 - 16:00",
+      "venue": "Green Living Center, Aundh",
+      "image": "images/sustainable home workshop.jpg",
+      "description": "Learn practical tips for creating an eco-friendly home environment.",
+      "price": "₹800",
+      "contact": {
+        "email": "sustainable.home@gmail.com",
+        "phone": "+91 98765 43218"
+      }
+    },
+    {
+      "id": "zero-waste-cooking",
+      "title": "Zero Waste Cooking Workshop",
+      "category": "Sustainable Living",
+      "date": "2025-07-10",
+      "time": "11:00 - 15:00",
+      "venue": "Organic Cafe, Koregaon Park",
+      "image": "images/zero waste cooking workshop.jpeg",
+      "description": "Master the art of cooking with minimal waste and maximum nutrition.",
+      "price": "₹1200",
+      "contact": {
+        "email": "zero.waste@gmail.com",
+        "phone": "+91 98765 43219"
+      }
+    },
+    {
+      "id": "youth-leadership-summit",
+      "title": "Youth Leadership Summit 2025",
+      "category": "Youth Empowerment",
+      "date": "2025-08-05",
+      "time": "09:00 - 18:00",
+      "venue": "Symbiosis Institute",
+      "image": "images/Youth Leadership Summit 2025.jpeg",
+      "description": "Develop leadership skills through interactive sessions and workshops.",
+      "price": "₹1500",
+      "contact": {
+        "email": "youth.summit@gmail.com",
+        "phone": "+91 98765 43220"
+      }
+    },
+    {
+      "id": "classical-dance-festival",
+      "title": "Classical Dance Festival",
+      "category": "Cultural Events",
+      "date": "2025-08-20",
+      "time": "17:00 - 21:00",
+      "venue": "Balgandharva Rangmandir",
+      "image": "images/Classical Dance Festival.jpg",
+      "description": "Celebrate Indian classical dance forms with renowned performers.",
+      "price": "₹500",
+      "contact": {
+        "email": "dance.fest@gmail.com",
+        "phone": "+91 98765 43221"
+      }
+    },
+    {
+      "id": "stem-education-fair",
+      "title": "STEM Education Fair 2025",
+      "category": "Educational Programs",
+      "date": "2025-09-01",
+      "time": "10:00 - 17:00",
+      "venue": "COEP Campus",
+      "image": "images/STEM Education Fair 2025.jpeg",
+      "description": "Interactive exhibits and workshops focusing on Science, Technology, Engineering, and Mathematics.",
+      "price": "₹300",
+      "contact": {
+        "email": "stem.fair@gmail.com",
+        "phone": "+91 98765 43222"
+      }
+    },
+    {
+      "id": "wildlife-conservation-talk",
+      "title": "Wildlife Conservation Talk",
+      "category": "Wildlife Protection",
+      "date": "2025-08-10",
+      "time": "15:00 - 17:00",
+      "venue": "Science Park Auditorium",
+      "image": "images/wildlife conservation talk.webp",
+      "description": "Expert talk on wildlife conservation challenges and solutions in Maharashtra.",
+      "price": "₹200",
+      "contact": {
+        "email": "wildlife.talk@gmail.com",
+        "phone": "+91 98765 43223"
+      }
+    },
+    {
+      "id": "sustainable-fashion-workshop",
+      "title": "Sustainable Fashion Workshop",
+      "category": "Sustainable Living",
+      "date": "2025-08-15",
+      "time": "14:00 - 18:00",
+      "venue": "Design Studio, Kalyani Nagar",
+      "image": "images/sustainable fashion workshop.jpeg",
+      "description": "Learn about sustainable fashion practices and upcycling techniques.",
+      "price": "₹1000",
+      "contact": {
+        "email": "eco.fashion@gmail.com",
+        "phone": "+91 98765 43224"
+      }
+    },
+    {
+      "id": "youth-entrepreneurship",
+      "title": "Youth Entrepreneurship Workshop",
+      "category": "Youth Empowerment",
+      "date": "2025-08-25",
+      "time": "10:00 - 17:00",
+      "venue": "Business Hub, Viman Nagar",
+      "image": "images/Youth Entrepreneurship Workshop.png",
+      "description": "Comprehensive workshop on starting and running a successful business.",
+      "price": "₹2000",
+      "contact": {
+        "email": "youth.business@gmail.com",
+        "phone": "+91 98765 43225"
+      }
+    },
+    {
+      "id": "folk-music-festival",
+      "title": "Folk Music Festival",
+      "category": "Cultural Events",
+      "date": "2025-09-05",
+      "time": "16:00 - 22:00",
+      "venue": "Shaniwar Wada",
+      "image": "images/Folk Music Festival.jpg",
+      "description": "Celebration of traditional folk music from Maharashtra.",
+      "price": "₹400",
+      "contact": {
+        "email": "folk.music@gmail.com",
+        "phone": "+91 98765 43226"
+      }
+    },
+    {
+      "id": "creative-writing-workshop",
+      "title": "Creative Writing Workshop",
+      "category": "Educational Programs",
+      "date": "2025-09-10",
+      "time": "11:00 - 16:00",
+      "venue": "British Library",
+      "image": "images/Creative Writing Workshop.webp",
+      "description": "Develop your creative writing skills with published authors.",
+      "price": "₹800",
+      "contact": {
+        "email": "creative.writing@gmail.com",
+        "phone": "+91 98765 43227"
+      }
+    },
+    {
+      "id": "youth-mental-health",
+      "title": "Youth Mental Health Workshop",
+      "category": "Youth Empowerment",
+      "date": "2025-09-15",
+      "time": "09:00 - 13:00",
+      "venue": "Wellness Center, Deccan",
+      "image": "images/Youth Mental Health Workshop.jpeg",
+      "description": "Understanding and managing mental health for young adults.",
+      "price": "₹500",
+      "contact": {
+        "email": "youth.health@gmail.com",
+        "phone": "+91 98765 43228"
+      }
+    },
+    {
+      "id": "traditional-art-exhibition",
+      "title": "Traditional Art Exhibition",
+      "category": "Cultural Events",
+      "date": "2025-09-20",
+      "time": "10:00 - 20:00",
+      "venue": "Art Gallery, MG Road",
+      "image": "images/Traditional Art Exhibition.webp",
+      "description": "Exhibition of traditional Indian art forms and workshops.",
+      "price": "₹200",
+      "contact": {
+        "email": "art.exhibition@gmail.com",
+        "phone": "+91 98765 43229"
+      }
+    },
+    {
+      "id": "coding-bootcamp",
+      "title": "Coding Bootcamp for Beginners",
+      "category": "Educational Programs",
+      "date": "2025-09-25",
+      "time": "09:00 - 18:00",
+      "venue": "Tech Hub, Hinjewadi",
+      "image": "images/Coding Bootcamp for Beginners.webp",
+      "description": "Introduction to programming for beginners.",
+      "price": "₹1500",
+      "contact": {
+        "email": "coding.camp@gmail.com",
+        "phone": "+91 98765 43230"
+      }
+    },
+    {
+      "id": "sustainable-energy-workshop",
+      "title": "Sustainable Energy Workshop",
+      "category": "Sustainable Living",
+      "date": "2025-10-01",
+      "time": "10:00 - 16:00",
+      "venue": "Energy Park, Pune",
+      "image": "images/sustainable energy workshop.jpg",
+      "description": "Learn about renewable energy solutions for homes and communities.",
+      "price": "₹600",
+      "contact": {
+        "email": "sustainable.energy@gmail.com",
+        "phone": "+91 98765 43231"
+      }
+    },
+    {
+      "id": "youth-public-speaking",
+      "title": "Youth Public Speaking Workshop",
+      "category": "Youth Empowerment",
+      "date": "2025-10-05",
+      "time": "14:00 - 18:00",
+      "venue": "Public Speaking Academy",
+      "image": "images/Youth Public Speaking Workshop.jpeg",
+      "description": "Develop confidence and public speaking skills.",
+      "price": "₹1000",
+      "contact": {
+        "email": "public.speaking@gmail.com",
+        "phone": "+91 98765 43232"
+      }
+    },
+    {
+      "id": "wildlife-rescue-training",
+      "title": "Wildlife Rescue Training",
+      "category": "Wildlife Protection",
+      "date": "2025-10-10",
+      "time": "09:00 - 17:00",
+      "venue": "Wildlife SOS Center",
+      "image": "images/wildlife rescue traing.jpg",
+      "description": "Hands-on training in wildlife rescue and rehabilitation.",
+      "price": "₹1500",
+      "contact": {
+        "email": "wildlife.rescue@gmail.com",
+        "phone": "+91 98765 43233"
+      }
+    },
+    {
+      "id": "cultural-heritage-walk",
+      "title": "Cultural Heritage Walk",
+      "category": "Cultural Events",
+      "date": "2025-10-15",
+      "time": "07:00 - 10:00",
+      "venue": "Old Pune City",
+      "image": "images/Cultural Heritage Walk.jpg",
+      "description": "Guided walk through historic Pune with cultural insights.",
+      "price": "₹300",
+      "contact": {
+        "email": "heritage.walk@gmail.com",
+        "phone": "+91 98765 43234"
+      }
+    },
+    {
+      "id": "language-learning-workshop",
+      "title": "Sanskrit Learning Workshop",
+      "category": "Educational Programs",
+      "date": "2025-10-20",
+      "time": "10:00 - 13:00",
+      "venue": "Sanskrit Bharati Center",
+      "image": "images/Sanskrit Learning Workshop.jpg",
+      "description": "Introduction to Sanskrit language and literature.",
+      "price": "₹600",
+      "contact": {
+        "email": "sanskrit.learn@gmail.com",
+        "phone": "+91 98765 43235"
+      }
+    },
+    {
+      "id": "eco-friendly-living",
+      "title": "Eco-Friendly Living Workshop",
+      "category": "Sustainable Living",
+      "date": "2025-10-25",
+      "time": "14:00 - 17:00",
+      "venue": "Community Center, Kothrud",
+      "image": "images/Eco-Friendly Living Workshop.jpg",
+      "description": "Practical tips for sustainable daily living.",
+      "price": "₹400",
+      "contact": {
+        "email": "eco.living@gmail.com",
+        "phone": "+91 98765 43236"
+      }
+    },
+    {
+      "id": "youth-career-guidance",
+      "title": "Youth Career Guidance Seminar",
+      "category": "Youth Empowerment",
+      "date": "2025-11-01",
+      "time": "10:00 - 16:00",
+      "venue": "Career Development Center",
+      "image": "images/Youth Career Guidance Seminar.jpg",
+      "description": "Expert guidance on career choices and planning.",
+      "price": "₹300",
+      "contact": {
+        "email": "career.guidance@gmail.com",
+        "phone": "+91 98765 43237"
+      }
+    },
+    {
+      "id": "traditional-dance-workshop",
+      "title": "Traditional Dance Workshop",
+      "category": "Cultural Events",
+      "date": "2025-11-05",
+      "time": "16:00 - 19:00",
+      "venue": "Dance Academy, FC Road",
+      "image": "images/Traditional Dance Workshop.jpg",
+      "description": "Learn traditional Indian dance forms.",
+      "price": "₹800",
+      "contact": {
+        "email": "dance.workshop@gmail.com",
+        "phone": "+91 98765 43238"
+      }
+    },
+    {
+      "id": "science-fair",
+      "title": "Young Scientists Fair",
+      "category": "Educational Programs",
+      "date": "2025-11-10",
+      "time": "09:00 - 18:00",
+      "venue": "Science Park",
+      "image": "images/Young Scientists Fair.jpg",
+      "description": "Interactive science experiments and demonstrations.",
+      "price": "₹200",
+      "contact": {
+        "email": "science.fair@gmail.com",
+        "phone": "+91 98765 43239"
+      }
+    },
+    {
+      "id": "sustainable-gardening",
+      "title": "Sustainable Gardening Workshop",
+      "category": "Sustainable Living",
+      "date": "2025-11-15",
+      "time": "09:00 - 13:00",
+      "venue": "Urban Gardens, Aundh",
+      "image": "images/Sustainable Gardening Workshop.jpg",
+      "description": "Learn organic gardening techniques for urban spaces.",
+      "price": "₹700",
+    "contact": {
+        "email": "urban.garden@gmail.com",
+        "phone": "+91 98765 43240"
+    }
+  }
+] 
+} 

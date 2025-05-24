@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pune Cleanup Drive - Event Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .event-header {
+            width: 100%;
+            height: 300px;
+            background: url('pune-cleanup.jpg') no-repeat center center/cover;
+            border-bottom: 5px solid #007bff;
+        }
+        .event-details {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .event-details h2 {
+            color: #007bff;
+        }
+        .register-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .register-btn:hover {
+            background-color: #0056b3;
+        }
+        .price-tag {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="event-header"></div>
+    
+    <div class="event-details">
+        <h2>Pune Cleanup Drive</h2>
+        <p><strong>Date:</strong> April 10, 2025</p>
+        <p><strong>Time:</strong> 7:00 AM - 11:00 AM</p>
+        <p><strong>Venue:</strong> Various Locations in Pune</p>
+        <p>
+            Join us in making Pune cleaner and greener by participating in the city-wide Cleanup Drive! 
+            Volunteers will be provided with gloves, garbage bags, and refreshments. Together, we can make a difference.
+        </p>
+        <div class="price-tag">₹350</div>
+        <button class="register-btn" onclick="registerForEvent()">Register Now</button>
+        <p><strong>Contact:</strong> punecleanup@event.com | +91 98765 43210</p>
+    </div>
+    
+    <script>
+        function registerForEvent() {
+            window.location.href = 'main.html?event=pune-cleanup';
+        }
+    </script>
+</body>
+</html>

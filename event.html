@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details - Poorna Pune</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="main.html" class="logo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="#6b46c1"/>
+                        <path d="M7 13L10 16L17 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Poorna Pune
+                </a>
+                <div class="search-container">
+                    <i class="mdi mdi-magnify text-2xl md:text-xl text-primary p-2 cursor-pointer"></i>
+                    <input type="text" placeholder="Search for events, interests or activities" aria-label="Search">
+                    <div id="searchDropdown" class="search-dropdown"></div>
+                </div>
+                <button class="location-btn">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Pune
+                </button>
+                <div class="auth-buttons">
+                    <a href="create-event" class="create-event-btn">
+                        <i class="mdi mdi-ticket"></i>
+                        <span>CREATE EVENT</span>
+                    </a>
+                    <a href="#" class="login-btn">Login | Signup</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="loading-spinner" id="loading-spinner">
+            <div class="spinner"></div>
+            <p>Loading event details...</p>
+        </div>
+        
+        <div class="event-hero" id="event-hero" style="display: none;">
+            <!-- Event banner will be inserted here -->
+        </div>
+        
+        <div class="container">
+            <div class="event-detail" id="event-detail" style="display: none;">
+                <!-- Event details will be loaded here -->
+            </div>
+            
+            <div class="event-not-found" id="event-not-found" style="display: none;">
+                <div class="event-info">
+                    <h1 class="event-detail-title">Event not found</h1>
+                    <p>The event you are looking for does not exist.</p>
+                    <a href="main.html" class="back-btn">Go back to events</a>
+                </div>
+            </div>
+            
+            <div class="event-error" id="event-error" style="display: none;">
+                <div class="event-info">
+                    <h1 class="event-detail-title">Error loading event</h1>
+                    <p>There was a problem loading the event details. Please try again later.</p>
+                    <a href="main.html" class="back-btn">Go back to events</a>
+                </div>
+            </div>
+            
+            <div class="related-events" id="related-events" style="display: none;">
+                <h2 class="related-events-title">Similar Events</h2>
+                <div class="events-wrapper" id="related-events-wrapper">
+                    <!-- Related events will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="main.html" class="logo">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="#6b46c1"/>
+                            <path d="M7 13L10 16L17 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Poorna Pune
+                    </a>
+                    <p>Join us in making Pune a better place through community events and initiatives.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Events</h3>
+                        <ul>
+                            <li><a href="main.html">All Events</a></li>
+                            <li><a href="main.html">Marathons & Cyclothons</a></li>
+                            <li><a href="main.html">Clean-up Drives</a></li>
+                            <li><a href="main.html">Environmental Workshops</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Our Mission</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Support</h3>
+                        <ul>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Poorna Pune. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="mdi mdi-facebook"></i></a>
+                    <a href="#"><i class="mdi mdi-twitter"></i></a>
+                    <a href="#"><i class="mdi mdi-instagram"></i></a>
+                    <a href="#"><i class="mdi mdi-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Get event ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const eventId = urlParams.get('id');
+        
+        // Load event data
+        async function loadEventDetails() {
+            try {
+                const response = await fetch('services.json');
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch events: ${response.status}`);
+                }
+                const data = await response.json();
+                
+                // Find the event with matching ID
+                const event = data.events.find(e => e.id === eventId);
+                
+                if (event) {
+                    displayEventDetails(event);
+                    document.title = `${event.title} - Poorna Pune`;
+                    
+                    // Load related events from the same category
+                    loadRelatedEvents(data.events, event);
+                } else {
+                    document.getElementById('loading-spinner').style.display = 'none';
+                    document.getElementById('event-not-found').style.display = 'block';
+                }
+            } catch (error) {
+                console.error('Error loading event details:', error);
+                document.getElementById('loading-spinner').style.display = 'none';
+                document.getElementById('event-error').style.display = 'block';
+            }
+        }
+        
+        // Format date
+        function formatDate(dateString) {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return new Date(dateString).toLocaleDateString('en-US', options);
+        }
+
+        // Format time
+        function formatTime(timeString) {
+            return timeString;
+        }
+        
+        // Display event details
+        function displayEventDetails(event) {
+            // Hide loading spinner
+            document.getElementById('loading-spinner').style.display = 'none';
+            
+            // Show event hero banner
+            const eventHero = document.getElementById('event-hero');
+            eventHero.style.display = 'block';
+            eventHero.innerHTML = `
+                <div class="event-banner-overlay"></div>
+                <img src="${event.image}" alt="${event.title}" class="event-banner-img" onerror="this.src='https://placehold.co/1920x800/6b46c1/white?text=${event.title.replace(/ /g, '+')}'">
+                <div class="container">
+                    <div class="event-banner-content">
+                        <div class="event-category-badge">${event.category}</div>
+                        <h1>${event.title}</h1>
+                        <div class="event-banner-meta">
+                            <div class="banner-meta-item">
+                                <i class="mdi mdi-calendar"></i>
+                                <span>${formatDate(event.date)}</span>
+                            </div>
+                            <div class="banner-meta-item">
+                                <i class="mdi mdi-clock-outline"></i>
+                                <span>${formatTime(event.time)}</span>
+                            </div>
+                            <div class="banner-meta-item">
+                                <i class="mdi mdi-map-marker"></i>
+                                <span>${event.venue}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Show event details
+            const eventDetailElement = document.getElementById('event-detail');
+            eventDetailElement.style.display = 'grid';
+            
+            eventDetailElement.innerHTML = `
+                <div class="event-content-main">
+                    <div class="event-description-card">
+                        <h2 class="section-title">About This Event</h2>
+                        <div class="event-description">
+                            <p>${event.description}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="event-highlights">
+                        <h2 class="section-title">Event Highlights</h2>
+                        <div class="highlights-list">
+                            <div class="highlight-item">
+                                <i class="mdi mdi-account-group"></i>
+                                <div class="highlight-content">
+                                    <h3>Community Impact</h3>
+                                    <p>Join fellow citizens in making a positive impact on our community.</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="mdi mdi-certificate"></i>
+                                <div class="highlight-content">
+                                    <h3>Participation Certificate</h3>
+                                    <p>All participants will receive a digital certificate of participation.</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="mdi mdi-leaf"></i>
+                                <div class="highlight-content">
+                                    <h3>Eco-Friendly</h3>
+                                    <p>This event follows eco-friendly practices to minimize environmental impact.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-content-sidebar">
+                    <div class="ticket-card">
+                        <div class="ticket-header">
+                            <h3>Registration</h3>
+                            <div class="ticket-price">${event.price}</div>
+                        </div>
+                        <div class="ticket-details">
+                            <div class="ticket-detail-item">
+                                <i class="mdi mdi-calendar"></i>
+                                <div>
+                                    <h4>Date</h4>
+                                    <p>${formatDate(event.date)}</p>
+                                </div>
+                            </div>
+                            <div class="ticket-detail-item">
+                                <i class="mdi mdi-clock-outline"></i>
+                                <div>
+                                    <h4>Time</h4>
+                                    <p>${formatTime(event.time)}</p>
+                                </div>
+                            </div>
+                            <div class="ticket-detail-item">
+                                <i class="mdi mdi-map-marker"></i>
+                                <div>
+                                    <h4>Venue</h4>
+                                    <p>${event.venue}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="register-btn" onclick="registerForEvent()">Register Now</button>
+                        <div class="share-event">
+                            <span>Share this event:</span>
+                            <div class="share-buttons">
+                                <a href="#" class="share-btn"><i class="mdi mdi-facebook"></i></a>
+                                <a href="#" class="share-btn"><i class="mdi mdi-twitter"></i></a>
+                                <a href="#" class="share-btn"><i class="mdi mdi-linkedin"></i></a>
+                                <a href="#" class="share-btn"><i class="mdi mdi-email"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="organizer-card">
+                        <h3>Contact Organizer</h3>
+                        <div class="organizer-detail">
+                            <div class="organizer-contact">
+                                <div class="contact-item">
+                                    <i class="mdi mdi-email"></i>
+                                    <a href="mailto:info@poornapune.org">info@poornapune.org</a>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="mdi mdi-phone"></i>
+                                    <a href="tel:+919876543210">+91 987-654-3210</a>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="mdi mdi-web"></i>
+                                    <a href="https://www.poornapune.org" target="_blank">www.poornapune.org</a>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="mdi mdi-map-marker"></i>
+                                    <a href="https://maps.google.com" target="_blank">123 Community Center, Pune</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Load related events
+        function loadRelatedEvents(allEvents, currentEvent) {
+            // Find events in the same category
+            const relatedEvents = allEvents.filter(event => 
+                event.category === currentEvent.category && event.id !== currentEvent.id
+            ).slice(0, 4);
+            
+            if (relatedEvents.length > 0) {
+                const relatedEventsSection = document.getElementById('related-events');
+                const relatedEventsWrapper = document.getElementById('related-events-wrapper');
+                
+                relatedEventsWrapper.innerHTML = relatedEvents.map(event => `
+                    <div class="event-card" onclick="location.href='event.html?id=${event.id}'">
+                        <div class="event-image">
+                            <img src="https://placehold.co/600x400/6b46c1/white?text=${event.title.replace(/ /g, '+')}" alt="${event.title}">
+                        </div>
+                        <div class="event-content">
+                            <h3 class="event-title">${event.title}</h3>
+                            <div class="event-meta">
+                                <span>${new Date(event.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
+                                <span class="separator">|</span>
+                                <span>${event.venue}</span>
+                            </div>
+                            <div class="event-footer">
+                                <div class="price-container">
+                                    <span class="price-amount">${event.price}</span>
+                                    ${event.price !== 'Free' ? '<span class="price-suffix">onwards</span>' : ''}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+                
+                relatedEventsSection.style.display = 'block';
+            }
+        }
+        
+        // Registration function
+        function registerForEvent() {
+            // Redirect to registration page with event ID
+            window.location.href = `register.html?event=${eventId}`;
+        }
+        
+        // Load event details when page loads
+        document.addEventListener('DOMContentLoaded', loadEventDetails);
+
+        // Search functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.querySelector('.search-container input');
+            const searchDropdown = document.getElementById('searchDropdown');
+            
+            searchInput.addEventListener('focus', function() {
+                searchDropdown.classList.add('active');
+            });
+            
+            searchInput.addEventListener('blur', function() {
+                setTimeout(() => {
+                    searchDropdown.classList.remove('active');
+                }, 200);
+            });
+            
+            searchInput.addEventListener('input', async function() {
+                const query = this.value.toLowerCase().trim();
+                
+                if (!query) {
+                    searchDropdown.classList.remove('active');
+                    return;
+                }
+                
+                try {
+                    const response = await fetch('services.json');
+                    if (!response.ok) throw new Error('Failed to fetch data');
+                    const data = await response.json();
+                    
+                    const results = data.events.filter(event => 
+                        event.title.toLowerCase().includes(query) || 
+                        event.category.toLowerCase().includes(query) ||
+                        event.description.toLowerCase().includes(query)
+                    ).slice(0, 5);
+                    
+                    if (results.length > 0) {
+                        searchDropdown.innerHTML = results.map(event => `
+                            <div class="search-result-item" onclick="location.href='event.html?id=${event.id}'">
+                                <div class="search-result-image">
+                                    <img src="https://placehold.co/600x400/6b46c1/white?text=${event.title.replace(/ /g, '+')}" alt="${event.title}">
+                                </div>
+                                <div class="search-result-content">
+                                    <div class="search-result-title">${event.title}</div>
+                                    <div class="search-result-info">
+                                        <span>${formatDate(event.date)}</span>
+                                        <span>${event.venue}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('');
+                    } else {
+                        searchDropdown.innerHTML = `<div class="no-results">No results found for "${query}"</div>`;
+                    }
+                    
+                    searchDropdown.classList.add('active');
+                    
+                } catch (error) {
+                    console.error('Search error:', error);
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

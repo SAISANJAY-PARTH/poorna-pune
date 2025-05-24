@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poorna Pune - Events</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="/" class="logo">
+                    Poorna Pune
+                </a>
+                <div class="search-container">
+                    <i class="mdi mdi-magnify text-2xl md:text-xl text-primary p-2 cursor-pointer"></i>
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="Search for events, interests or activities"
+                        aria-label="Search for events, interests or activities">
+                    <div id="searchDropdown" class="search-dropdown">
+                        <!-- Search results will appear here -->
+                    </div>
+                </div>
+                <div class="auth-buttons">
+                    <a href="/create-event" class="create-event-btn smaller-btn">
+                        <i class="mdi mdi-ticket"></i>
+                        <span>CREATE EVENT</span>
+                    </a>
+                    <a href="#" class="login-btn">Login | Signup</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Main Content -->
+        <div id="mainContent">
+            <!-- Categories will be dynamically inserted here -->
+            </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="main.html" class="logo">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="#6b46c1"/>
+                            <path d="M7 13L10 16L17 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Poorna Pune
+                    </a>
+                    <p>Join us in making Pune a better place through community events and initiatives.</p>
+                    </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Events</h3>
+                        <ul>
+                            <li><a href="main.html">All Events</a></li>
+                            <li><a href="main.html">Marathons & Cyclothons</a></li>
+                            <li><a href="main.html">Clean-up Drives</a></li>
+                            <li><a href="main.html">Environmental Workshops</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Our Mission</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Support</h3>
+                        <ul>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+                    </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Poorna Pune. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="mdi mdi-facebook"></i></a>
+                    <a href="#"><i class="mdi mdi-twitter"></i></a>
+                    <a href="#"><i class="mdi mdi-instagram"></i></a>
+                    <a href="#"><i class="mdi mdi-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Fetch and load events data
+        fetch('services.json')
+            .then(response => response.json())
+            .then(data => {
+                const mainContent = document.getElementById('mainContent');
+                const categories = data.categories;
+                const events = data.events;
+
+                // Group events by category
+                const eventsByCategory = {};
+                categories.forEach(category => {
+                    eventsByCategory[category] = events.filter(event => event.category === category);
+                });
+
+                // Create sections for each category
+                categories.forEach(category => {
+                    const categoryEvents = eventsByCategory[category];
+                    if (categoryEvents.length > 0) {
+                        const section = document.createElement('section');
+                        section.className = 'category-section';
+                        section.innerHTML = `
+            <div class="category-header">
+                                <h2 class="category-title">${category}</h2>
+                <a href="#" class="view-all">VIEW ALL</a>
+            </div>
+            <div class="events-container">
+                                <button class="carousel-button carousel-prev" onclick="slideEvents(this, -1)">
+                                    <i class="mdi mdi-chevron-left"></i>
+                                </button>
+                                <div class="events-wrapper">
+                                    ${categoryEvents.map(event => `
+                                        <div class="event-card" onclick="location.href='event.html?id=${event.id}'">
+                    <div class="event-image">
+                                                <img src="${event.image}" alt="${event.title}" onerror="this.src='https://placehold.co/600x400/6b46c1/white?text=${event.title.replace(/ /g, '+')}'">
+                    </div>
+                    <div class="event-content">
+                                                <h3 class="event-title">${event.title}</h3>
+                                                <div class="event-meta">
+                                                    <span>${new Date(event.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
+                                                    <span class="separator">|</span>
+                                                    <span>${event.venue}</span>
+                                                </div>
+                                                <div class="event-footer">
+                                                    <div class="price-container">
+                                                        <span class="price-amount">${event.price}</span>
+                                                        ${event.price !== 'Free' ? '<span class="price-suffix">onwards</span>' : ''}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    `).join('')}
+                        </div>
+                                <button class="carousel-button carousel-next" onclick="slideEvents(this, 1)">
+                                    <i class="mdi mdi-chevron-right"></i>
+                                </button>
+                        </div>
+                        `;
+                        mainContent.appendChild(section);
+                        
+                        // Initialize carousel state
+                        const container = section.querySelector('.events-container');
+                        const wrapper = container.querySelector('.events-wrapper');
+                        updateCarouselButtons(container);
+                    }
+                });
+            })
+            .catch(error => console.error('Error loading events:', error));
+
+        // Carousel functionality
+        function slideEvents(button, direction) {
+            const container = button.closest('.events-container');
+            const wrapper = container.querySelector('.events-wrapper');
+            const cards = wrapper.querySelectorAll('.event-card');
+            const cardWidth = cards[0].offsetWidth;
+            const gap = 24; // Gap between cards (1.5rem)
+            const visibleWidth = container.offsetWidth - 96; // Container width minus padding
+            const cardsToShow = Math.floor(visibleWidth / (cardWidth + gap));
+            const scrollAmount = direction * (cardWidth + gap);
+
+            // Calculate new scroll position
+            const currentScroll = wrapper.scrollLeft;
+            const newScroll = currentScroll + scrollAmount;
+            const maxScroll = wrapper.scrollWidth - wrapper.clientWidth;
+
+            // Smooth scroll to new position
+            wrapper.scrollTo({
+                left: Math.max(0, Math.min(maxScroll, newScroll)),
+                behavior: 'smooth'
+            });
+
+            // Update button states after animation
+            setTimeout(() => updateCarouselButtons(container), 300);
+        }
+
+        function updateCarouselButtons(container) {
+            const wrapper = container.querySelector('.events-wrapper');
+            const prevButton = container.querySelector('.carousel-prev');
+            const nextButton = container.querySelector('.carousel-next');
+            
+            // Calculate scroll positions
+            const maxScroll = wrapper.scrollWidth - wrapper.clientWidth;
+            const currentScroll = wrapper.scrollLeft;
+            
+            // Update button states
+            if (currentScroll <= 0) {
+                prevButton.style.display = 'none';
+            } else {
+                prevButton.style.display = 'flex';
+            }
+            
+            if (currentScroll >= maxScroll - 1) {
+                nextButton.style.display = 'none';
+            } else {
+                nextButton.style.display = 'flex';
+            }
+        }
+
+        // Initialize all carousels
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.events-container').forEach(container => {
+                const wrapper = container.querySelector('.events-wrapper');
+                
+                // Add scroll event listener with debounce
+                let scrollTimeout;
+                wrapper.addEventListener('scroll', () => {
+                    if (scrollTimeout) {
+                        clearTimeout(scrollTimeout);
+                    }
+                    scrollTimeout = setTimeout(() => {
+                        updateCarouselButtons(container);
+                    }, 100);
+                });
+                
+                // Initial button state update
+                updateCarouselButtons(container);
+            });
+        });
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        const searchDropdown = document.getElementById('searchDropdown');
+
+        searchInput.addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            
+            if (searchTerm.length < 2) {
+                searchDropdown.style.display = 'none';
+                return;
+            }
+
+            fetch('services.json')
+                .then(response => response.json())
+                .then(data => {
+                    const matchingEvents = data.events.filter(event => 
+                        event.title.toLowerCase().includes(searchTerm) ||
+                        event.description.toLowerCase().includes(searchTerm) ||
+                        event.category.toLowerCase().includes(searchTerm) ||
+                        event.venue.toLowerCase().includes(searchTerm)
+                    );
+
+                    if (matchingEvents.length > 0) {
+                        searchDropdown.innerHTML = matchingEvents.map(event => `
+                            <div class="search-result-item" onclick="location.href='event.html?id=${event.id}'">
+                                <div class="search-result-image">
+                                    <img src="${event.image}" alt="${event.title}" onerror="this.src='https://placehold.co/600x400/6b46c1/white?text=${event.title.replace(/ /g, '+')}'">
+                    </div>
+                                <div class="search-result-content">
+                                    <h4>${event.title}</h4>
+                                    <p>${event.category}</p>
+                                    <p>${new Date(event.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} | ${event.venue}</p>
+                    </div>
+                </div>
+                        `).join('');
+                        searchDropdown.style.display = 'block';
+                    } else {
+                        searchDropdown.innerHTML = '<div class="no-results">No events found</div>';
+                        searchDropdown.style.display = 'block';
+                    }
+                });
+        });
+
+        // Hide dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!searchInput.contains(e.target) && !searchDropdown.contains(e.target)) {
+                searchDropdown.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
